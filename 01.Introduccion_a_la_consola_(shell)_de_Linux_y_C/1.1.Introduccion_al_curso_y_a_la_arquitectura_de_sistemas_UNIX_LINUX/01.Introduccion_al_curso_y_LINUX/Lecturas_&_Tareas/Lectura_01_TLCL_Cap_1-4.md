@@ -155,7 +155,7 @@ Se utilizarán los siguientes comandos:
 * ```mv```: Mover/renombrar archivos y directorios
 * ```mkdir```: Crear directorios
 * ```rm```: Remover archivos y directorios
-* ```ln```: Crear hard links y symbolic links
+* ```ln```: Crear enlaces hard y enlaces soft
 
 ### Wildcards
 Caracteres especiales para especificar rápidamente grupos de filenames, basándose en patrones de caracteres.
@@ -211,28 +211,28 @@ donde *item* es uno o más archivos/directorios.
 * **Tip útil**: Antes de borrar con `rm`, probar la wildcard a utilizar con `ls`.
 
 ### ln
-Utilizado para crear *hard links* o *symbolic links*. Utilizado de dos maneras:
+Utilizado para crear *hard enlaces hard* o *enlaces soft*. Utilizado de dos maneras:
 
 `ln file link`
 
-para crear un *hard link*, y
+para crear un *enlace hard*, y
 
 `ln -s item link`
 
-para crear un *symbolic link* donde *item* es un archivo o directorio.
+para crear un *enlace soft* donde *item* es un archivo o directorio.
 
-#### Hard links
+#### Enlaces hard
 
-* Por defecto, todo archivo tiene un *hard link* que le otorga su nombre. Cuando creamos un *hard link*, creamos una entrada de directorio adicional para un archivo.
+* Por defecto, todo archivo tiene un *enlace hard* que le otorga su nombre. Cuando creamos un *enlace hard*, creamos una entrada de directorio adicional para un archivo.
 
 * Tienen dos limitaciones importantes:
-  1. Un *hard link* no puede referir a un archivo fuera de su propio sistema de archivos. (Ejemplo: Un archivo en otra partición del disco.)
-  2. Un *hard link* no puede referir a un directorio.
+  1. Un *enlace hard* no puede referir a un archivo fuera de su propio sistema de archivos. (Ejemplo: Un archivo en otra partición del disco.)
+  2. Un *enlace hard* no puede referir a un directorio.
 
-* Un *hard link* no es distinguible del archivo mismo.
-* Cuando se borra un hard link, se elimina el vínculo pero el contenido del archivo sigue existiendo hasta que se supriman todas las referencias al archivo.
+* Un *enlace hard* no es distinguible del archivo mismo.
+* Cuando se borra un *enlace hard*, se elimina el vínculo pero el contenido del archivo sigue existiendo hasta que se supriman todas las referencias al archivo.
 
-#### Symbolic links
+#### Enlaces soft
 
 * Funcionan como un atajo de Windows.
 * Si se le escribe algo al link, se escribe sobre el archivo referido.
