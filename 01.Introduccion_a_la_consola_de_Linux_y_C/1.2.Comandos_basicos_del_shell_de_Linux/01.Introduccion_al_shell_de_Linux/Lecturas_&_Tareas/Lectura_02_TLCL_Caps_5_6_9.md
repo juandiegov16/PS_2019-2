@@ -82,6 +82,122 @@ Donde *name* es el nombre de nuestro nuevo comando y *string* es la serie de ins
 unalias command
 ```
 
+## 6. Redirección
+Se utilizarán los siguientes comandos:
+* `cat`: Concatena archivos
+* `sort`: Organiza líneas de texto
+* `uniq`: Reporta u omite líneas repetidas
+* `grep`: Imprime líneas coincidentes con un patrón dado
+* `wc`: Imprime número de saltos de línea, palabras y caracteres de un archivo
+* `head`: Muestra porción inicial de un archivo
+* `tail`: Muestra porción final de un archivo
+* `tee`: Lee desde entrada estándar y escribe a salida estándar y archivos
+
+### Entrada estándar, Salida estándar & Error estándar
+* Los programas que utilizamos producen salidas, las cuales usualmente pueden ser de dos tipos:
+  * Los resultados del programa (*stdout*) y sus mensajes de estado (*stderr*). Por defecto, ambos están ligados a la pantalla y no se guardan en disco.
+
+* Además, muchos programas reciben entrada de *stdin*, el cual está - por defecto - vinculado con el teclado.
+
+### Redirigiendo la salida estándar
+Para redirigir la salida estándar a un archivo en vez de la pantalla usamos el operador `>`.
+  * Conviene hacer esto por si queremos guardar los resultados de un comando, por ejemplo.
+
+> Redirección en acción
+
+```bash
+ls -l /usr/bin > ls-resultado.txt
+```
+
+Lo que hizo este comando fue crear un listado en formato largo del directorio `/usr/bin` y enviar los resultados al archivo `ls-resultado.txt`.
+* Nota: Usar `>` redirige la salida hacia un archivo, **sobreescribiéndolo por completo**. Para *anexar* salida redirigida al final de un archivo, usamos `>>`.
+
+### Redirigiendo error estándar
+No tiene un operador dedicado así que debemos referirnos a su *descriptor de archivo*.
+* El shell se refiere internamente a stdin, stdout y stderr como 0, 1 y 2 respectivamente.
+
+> Ejemplo
+
+```bash
+ls -l /bin/usr 2> ls-error.txt
+```
+Esto redirige el error estándar a `ls-error.txt`.
+
+### Redirigiendo salida y error estándar a un archivo
+
+#### Método 1
+```bash
+ls -l /bin/usr > ls-salida.txt 2>&1
+```
+Esto redirige salida estándar a `ls-salida.txt` y redirige stderr a stdout con la notación `2>&1`.
+
+#### Método 2
+
+```bash
+ls -l /bin/usr &> ls-salida.txt
+```
+### Desechar salida no deseada
+```bash
+ls -l /bin/usr 2> /dev/null
+```
+
+### Redirigir entrada estándar
+El comando `cat` lee uno o más archivos y los copia a stdout:
+```bash
+cat [file...]
+```
+
+* Si escribimos solamente `cat`, se quedará esperando una entrada de teclado.
+* Podemos leer archivos del siguiente modo:
+```bash
+cat < lazy_dog.txt
+```
+
+### Pipelines
+Utilizando el operador `|` podemos enviar la salida estándar de un comando a la entrada estándar de otro:
+```bash
+command1 | command2
+```
+#### Filtros
+> Ejemplo
+
+```bash
+ls -l /bin /usr/bin | sort | less
+```
+Entrega una lista por directorio, `sort` las junta y ordena todo.
+
+> Para matar líneas repetidas del ejemplo anterior
+
+```bash
+ls -l /bin /usr/bin | sort | uniq | less
+```
+
+### `wc` - Contar palabras, líneas y bytes
+```bash
+wc file
+```
+Imprime tres números que respectivamente corresponden a líneas, palabras y bytes del archivo dado.
+* Si se ejecuta sin argumentos, acepta entrada estándar.
+
+### `grep`
+Uso:
+```bash
+grep pattern [file...]
+```
+
+### `head/tail`
+Por defecto, `head` imprime las 10 primeras líneas de un archivo mientras que `tail` imprime las 10 últimas. Número de líneas ajustable con la opción `-n`.
+* Utilizables con pipelines.
+
+### `tee`
+Lee stdin, lo copia a stdout y a uno o más archivos. Esto es útil para capturar los contenidos de un *pipeline* en una etapa intermedia de procesamiento.
+
+> Aplicando a un ejemplo anterior
+
+```bash
+ls -l /usr/bin | tee ls.txt | grep zip
+```
+
 
 
 
