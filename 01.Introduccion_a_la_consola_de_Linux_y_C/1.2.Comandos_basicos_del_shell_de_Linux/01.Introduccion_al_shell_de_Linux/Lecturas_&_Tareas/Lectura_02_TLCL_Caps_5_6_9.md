@@ -198,6 +198,56 @@ Lee stdin, lo copia a stdout y a uno o más archivos. Esto es útil para captura
 ls -l /usr/bin | tee ls.txt | grep zip
 ```
 
+## 9. Permisos
+Comandos a utilizar:
+* `id` - Muestra identidad del usuario
+* `chmod` - Cambia modo de un archivo
+* `umask` - Configurar permisos por defecto de un archivo
+* `su` - Ejecutar un shell como otro usuario
+* `sudo` - Ejecutar un comando como otro usuario
+* `chown` - Cambiar dueño de un archivo
+* `eigrp` - Cambiar el grupo dueño de un archivo
+* `passwd` - Cambiar la contraseña de un usuario
+
+### Dueños, Miembros de Grupo y demás
+* En el modelo de seguridad Unix, un usuario puede tener propiedad de archivos y
+directorios. Los usuarios, a su vez, pueden pertenecer a un *grupo* cuyos usuarios
+tienen acceso a archivos y directorios, otorgado por sus respectivos dueños.
+
+### Lectura, escritura y ejecución
+Los derechos de acceso a archivos y directorios están definidos en función de
+accesos de lectura, escritura y ejecución. Podemos verlos usando `ls -l`.
+
+> Tipos de archivo
+
+Representado por el primer caracter del listado.
+![](https://i.imgur.com/JE042j8.png)
+![](https://i.imgur.com/XiPTdlJ.png)
+
+> Modo de archivo
+
+Los nueve caracteres restantes, representan los permisos de lectura, escritura,
+y ejecución para el dueño del archivo, el grupo dueño y todos los demás:
+![](https://i.imgur.com/DjogbRx.png)
+
+Tienen los siguientes efectos:
+![](https://i.imgur.com/zMlTmO4.png)
+
+### `chmod` - Cambiar modo de archivo
+Soporta el cambio de modo de un archivo o directorio en dos posibles maneras:
+Representación numérica octal o representación simbólica.
+
+#### Modos de archivo en binario y octal
+![](https://i.imgur.com/f4Xxfpm.png)
+
+#### Notación simbólica
+![](https://i.imgur.com/idDmZME.png)
+![](https://i.imgur.com/bChr0FM.png)
+
+> Ejemplos
+
+![](https://i.imgur.com/bdWM6rt.png)
+
 
 
 
