@@ -248,10 +248,31 @@ Representación numérica octal o representación simbólica.
 
 ![](https://i.imgur.com/bdWM6rt.png)
 
+### `umask` - Setear permisos por defecto
+El comando `umask` controla los permisos por defecto que se le otorgan a un archivo cuando es creado. Utiliza notación octal para expresar una *máscara* de bits a ser removidos de los atributos.
+* Este número octal es de 4 dígitos.
+* El valor por defecto en la mayoría de distros de Linux es 0022 o 0002.
+
+[Aquí un sitio útil.](https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html)
+
+### `sudo`
+* [Linux 101: Introduction to Sudo](https://www.linux.com/tutorials/linux-101-introduction-sudo/)
+* [Understanding and using sudo in Unix](https://aplawrence.com/Basics/sudo.html)
+
+### `su`
+* [Learn Difference between "su" and "su-"](https://www.tecmint.com/difference-between-su-and-su-commands-in-linux/)
 
 
+### `chown` - Cambiar dueño/grupo de archivo
+> Requiere usar privilegios superuser.
 
+```bash
+chown [owner] [[group]] file...
+```
 
+> Ejemplos
+
+![](https://i.imgur.com/JuXeIxg.png)
 
 
 
