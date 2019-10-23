@@ -9,4 +9,6 @@ typedef struct Usuario{
  int userid;
 }Usuario_t;
 
+
 /*TODO: Declaración validar() */
+void validar(Usuario_t user);

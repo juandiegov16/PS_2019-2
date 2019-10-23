@@ -4,7 +4,7 @@ include config.mk
 # Opción -Wall habilita mensajes de advertencia
 # Opción -I seguido de directorio le dice dónde buscar las librerías
 .PHONY: all
-all:$(EXE_DIR)/practica
+all:$(EXE_DIR)/main
 
 .PHONY: dir
 dir:
@@ -20,12 +20,15 @@ clean:
 	rm -f $(EXE_FILES)
 	rm -f $(OBJ_FILES)
 
-$(EXE_DIR)/practica: $(O_DIR)/practica.o
+$(EXE_DIR)/main: $(OBJ_FILES)
 	$(CC) $(OFLAGS)
 
-$(O_DIR)/practica.o: $(SRC_DIR)/practica.c
+$(O_DIR)/validar.o: $(SRC_DIR)/validar.c
+	$(CC) $(CFLAGS)
+
+$(O_DIR)/main.o: $(SRC_DIR)/main.c
 	$(CC) $(CFLAGS)
 
 .PHONY: run
 run:
-	$(EXE_DIR)/practica
+	$(EXE_DIR)/main
