@@ -44,7 +44,7 @@ void validar (Usuario_t user)
   }
   else if (digitos == 0)
   {
-    printf("ERROR (4) -> Contraseña no tiene números.\n");
+    printf("ERROR (5) -> Contraseña no tiene números.\n");
   }
   else
   {
