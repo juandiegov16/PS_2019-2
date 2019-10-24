@@ -24,14 +24,16 @@ int main()
     apellido_minusculas[i] = tolower(user.apellido[i]);
   }
 
+  //Imprime la inicial del nombre + apellido en minúsculas en la variable username
   snprintf(user.username, MAXSTR, "%c%s", tolower(user.nombre[0]), apellido_minusculas);
   printf("Tu nombre de usuario es: %s\n", user.username);
 
-  printf("Introduce una contraseña: \n");
+
+  printf("Introduce una contraseña. (Sugerencia: Mínimo 10 caracteres; incluye al menos una letra y un número)\n");
   scanf("%s",user.password);
 
   //Generar user ID
-  user.userid = rand() % 20;
+  user.userid = rand();
 
   validar(user);
 

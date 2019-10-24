@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 void validar (Usuario_t user)
 {
@@ -15,10 +16,10 @@ void validar (Usuario_t user)
     user.apellido[i] = toupper(user.apellido[i]);
   }
 
-
+  //Declaración contadores
   int letras, digitos, total = 0;
 
-  //Contadores
+  //Funcionamiento contadores
   for (int i=0; i<strlen(user.password);i++)
   {
     if(isalpha(user.password[i]))
@@ -35,23 +36,23 @@ void validar (Usuario_t user)
   //Para mensajes de error
   if (total < 10)
   {
-    printf("ERROR (3) Contraseña tiene menos de 10 caracteres.\n");
+    printf("ERROR (3) -> Contraseña tiene menos de 10 caracteres.\n");
   }
   else if (letras == 0)
   {
-    printf("ERROR (4) Contraseña no tiene letras.\n");
+    printf("ERROR (4) -> Contraseña no tiene letras.\n");
   }
   else if (digitos == 0)
   {
-    printf("ERROR (4) Contraseña no tiene números.\n");
+    printf("ERROR (4) -> Contraseña no tiene números.\n");
   }
   else
   {
-    printf("OK (0) Todo en orden.\n");
+    printf("OK (0) -> Todo en orden.\n");
   }
 
 
-  //Comprobación datos
+  //Comprobación datos (Comentar todo el bloque de considerarlo pertinente)
   printf("\nSus datos son:\n");
   printf("Nombre:\t %s\n", user.nombre);
   printf("Apellido:\t %s\n", user.apellido);
