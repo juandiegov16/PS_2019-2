@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-void validar (Usuario_t user)
+void validar ()
 {
   //Mayúscula inicial de nombre y apellido
   for (int i= 0; i<1; i++)
@@ -36,19 +36,19 @@ void validar (Usuario_t user)
   //Para mensajes de error
   if (total < 10)
   {
-    printf("ERROR (3) -> Contraseña tiene menos de 10 caracteres.\n");
+    printf("\nERROR (3) -> Contraseña tiene menos de 10 caracteres.\n");
   }
   else if (letras == 0)
   {
-    printf("ERROR (4) -> Contraseña no tiene letras.\n");
+    printf("\nERROR (4) -> Contraseña no tiene letras.\n");
   }
   else if (digitos == 0)
   {
-    printf("ERROR (5) -> Contraseña no tiene números.\n");
+    printf("\nERROR (5) -> Contraseña no tiene números.\n");
   }
   else
   {
-    printf("OK (0) -> Todo en orden.\n");
+    printf("\nOK (0) -> Todo en orden.\n");
   }
 
 

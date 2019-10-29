@@ -6,7 +6,6 @@
 
 int main()
 {
-  Usuario_t user;
 
   printf("Introduce tu primer nombre: \n");
   scanf("%s",user.nombre);
@@ -23,7 +22,7 @@ int main()
   }
 
   //Imprime la inicial del nombre + apellido en minúsculas en la variable username
-  //memset(user.username, '\0', MAXSTR);
+  memset(user.username, '\0', MAXSTR);
   snprintf(user.username, MAXSTR, "%c%s", tolower(user.nombre[0]), apellido_minusculas);
   // printf("%s",user.username);
   printf("Tu nombre de usuario es: %s\n", user.username);
@@ -35,6 +34,6 @@ int main()
   //Generar user ID
   user.userid = rand();
 
-  validar(user);
+  validar();
 
 }
