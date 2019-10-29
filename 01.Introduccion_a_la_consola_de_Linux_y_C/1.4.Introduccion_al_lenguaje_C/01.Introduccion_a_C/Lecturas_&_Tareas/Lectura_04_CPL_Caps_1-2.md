@@ -146,3 +146,34 @@ main()
 ```
 
 ### 1.6. Arreglos
+* Arreglos comienzan en 0.
+
+### 1.7. Funciones
+* Tienen la siguiente forma:
+```c
+return-type function-name(parameters, if any)
+{
+  declarations
+  statements
+}
+```
+
+* Definiciones de funciones pueden aparecer en cualquier orden, pero ninguna
+función puede estar dividida entre archivos.
+* Los nombres que una función le pone a sus parámetros son locales,
+y no son visibles para otras funciones: otras rutinas pueden utilizar los
+mismos nombres sin problema.
+
+### 1.8. Argumentos - Pasar por valor
+* Esto quiere decir que a una función invocada se le entregan los valores de sus
+argumentos en variables temporales en vez de las originales.
+* Permite programas más compactos; parámetros se pueden tratar como variables
+locales inicializadas. :)
+* De ser necesario, es posible que una función modifique una variable: se debe
+proveer la *dirección* de la variable en cuestión(técnicamente un puntero).
+* Cuando se pasa el nombre de un arreglo, el valor que recibe la función es
+la primera posición.
+
+### 1.9. Arreglos de caracteres
+
+### 1.10. Variables externas y alcance
