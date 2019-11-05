@@ -14,7 +14,7 @@ Crear un programa en C que cumpla todos los requisitos de la práctica 3: **Alma
 * Para guardar, crear una función llamada guardar() en un archivo guardar.c y con una cabecera guardar.h
 * La función debe tener la siguiente declaración:
 ```c
-void guardar(Usuario_t *); /* Usuario_t * es el puntero al arreglo de usuarios */
+void guardar(Usuario_t *usuarios); /* Usuario_t * es el puntero al arreglo de usuarios */
 ```
 
 
