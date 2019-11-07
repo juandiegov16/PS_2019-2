@@ -137,69 +137,115 @@ man git <verbo>
 ### Consiguiendo un repositorio de Git
 
 #### Inicializar un repositorio en un directorio existente
+```
+git init
+```
 
 #### Clonar un repositorio existente
+```
+git clone <direccion repositorio>
+```
 
 ### Guardar cambios al repositorio
+> El ciclo de vida de los estados de los archivos
 
+![](https://i.imgur.com/2P2KD3b.png)
 #### Revisar el estado de tus archivos
+```
+git status
+```
 
 #### Rastrear nuevos archivos
+```
+git add <nombre archivo>
+```
 
-#### Alistar archivos modificados (stage)
+#### Alistar archivos modificados (staging)
+* Modificar un archivo ya rastreado y correr `git add <nombre archivo>`
+(git add es multipropósito)
 
 #### Estado corto
+```
+git status -s
+```
 
 #### Ignorar archivos
+* Crear un archivo llamado `.gitignore` y escribir dentro de él los nombres
+de los archivos que queremos que Git... ignore *Seinfeld Theme.mp3*
 
 #### Ver cambios alistados y no alistados (staged/unstaged)
+```
+git diff
+```
+
+```
+git diff --staged
+```
 
 #### Hacer commit a los cambios
+```
+git commit
+```
+
+```
+git commit -m "Descripción commit"
+```
 
 #### Saltar el staging area
-
+```
+git commit -a
+```
 #### Remover archivos
-
-#### Moviendo archivos
+```
+git rm <nombre archivo>
+```
 
 ### Ver el historial de commits
-
+```
+git log
+```
 #### Limitar la salida del registro
+>Ejemplo: Commits hechos en las últimas 2 semanas
+
+```
+git log --since=2.weeks
+```
 
 ### Revirtiendo cosas
-
+```
+git commit --amend
+```
 #### "Unstaging" a un archivo en estado "staged"
-
-#### "Des-modificar" un archivo modificado
-
+```
+git reset HEAD <nombre archivo>
+```
+#### Descartar cambios a un archivo modificado
+```
+git checkout -- <nombre archivo>
+```
 ### Trabajar con remotos
 
 #### Mostrar tus remotos
-
+```
+git remote -v
+```
 #### Añadir repositorios remotos
-
+```
+git remote add <nombre corto> <url>
+```
 #### Hacer fetch/pull a tus remotos
-
+```
+git fetch [nombre-remoto]
+```
 #### Hacer push a tus remotos
-
+```
+git push origin master
+```
 #### Inspeccionar un remoto
-
+```
+git remote show origin
+```
 #### Remover y renombrar remotos
-
-### Etiquetado (Tagging)
-
-#### Listar etiquetas
-
-#### Crear etiquetas
-
-#### Etiquetas marcadas
-
-#### Etiquetas peso ligero
-
-#### Etiquetado posterior
-
-#### Compartir etiquetas
-
-#### Checkout a etiquetas
-
-### Aliases en Git
+```
+git remote rename [nombre-viejo] [nombre-nuevo]
+```
