@@ -1,0 +1,24 @@
+[submodule "04.Librerias/4.1.Librerias_estaticas_y_dinamicas/ejemplo_librerias"]
+	path = 04.Librerias/4.1.Librerias_estaticas_y_dinamicas/ejemplo_librerias
+	url = https://bitbucket.org/fexadom/ejemplo_librerias
+[submodule "05.Entrada_&_salida/5.2.Intro_a_protocolos_de_transferencia_de_control_e_Internet/ligghttpd"]
+	path = 05.Entrada_&_salida/5.2.Intro_a_protocolos_de_transferencia_de_control_e_Internet/ligghttpd
+	url = https://git.lighttpd.net/lighttpd/lighttpd1.4.git
+[submodule "05.Entrada_&_salida/5.3.API_entrada_salida/ejemplo_bitmask"]
+	path = 05.Entrada_&_salida/5.3.API_entrada_salida/ejemplo_bitmask
+	url = https://bitbucket.org/fexadom/ejemplo_bitmask
+[submodule "05.Entrada_&_salida/5.3.API_entrada_salida/ejemplos_io"]
+	path = 05.Entrada_&_salida/5.3.API_entrada_salida/ejemplos_io
+	url = https://bitbucket.org/fexadom/ejemplos_io
+[submodule "05.Entrada_&_salida/5.4.API_sockets/ejemplo_sockets"]
+	path = 05.Entrada_&_salida/5.4.API_sockets/ejemplo_sockets
+	url = https://bitbucket.org/fexadom/ejemplo_sockets
+[submodule "06.Programacion_en_paralelo/6.1.Uso_de_senales_asincronicas/ejemplos_procesos"]
+	path = 06.Programacion_en_paralelo/6.1.Uso_de_senales_asincronicas/ejemplos_procesos
+	url = https://bitbucket.org/fexadom/ejemplos_procesos
+[submodule "progsis-c-plantilla"]
+	path = progsis-c-plantilla
+	url = https://github.com/progsis-espol/progsis-c-plantilla
+[submodule "06.Programacion_en_paralelo/6.3.Concurrencia_con_hilos/ejemplo_threads"]
+	path = 06.Programacion_en_paralelo/6.3.Concurrencia_con_hilos/ejemplo_threads
+	url = https://bitbucket.org/fexadom/ejemplo_threads
